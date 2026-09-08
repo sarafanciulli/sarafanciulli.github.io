@@ -92,10 +92,7 @@
   .hero{padding:100px 0 80px;}
   .hero .kicker{
     font-size:15px; 
-    background: linear-gradient(90deg, #6BF684 0%, #F66BDD 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color:var(--ink-soft);
     font-weight:600; 
     margin-bottom:22px;
     display: inline-block;
@@ -173,6 +170,15 @@
     margin-top:0;
   }
 
+  .results-block .field-label{
+    background: linear-gradient(90deg, #6BF684 0%, #F66BDD 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-weight:600;
+  }
+
   .project-image{
     width:100%;
     border-radius:16px;
@@ -190,7 +196,7 @@
   .cs-toggle{margin-top:26px;}
   details summary{
     cursor:pointer; list-style:none; display:flex; align-items:center; gap:10px;
-    font-size:14.5px; font-weight:500; color:var(--blue); padding:10px 0;
+    font-size:14.5px; font-weight:700; color:var(--ink-soft); padding:10px 0;
   }
   details summary::-webkit-details-marker{display:none;}
   details summary::before{content:"+"; font-size:18px; width:18px;}
@@ -207,7 +213,7 @@
   .kpis{display:flex; gap:8px; flex-wrap:wrap; margin-top:4px;}
   .kpi-pill{font-size:12.5px; background:var(--bg); border:1px solid var(--line); border-radius:20px; padding:3px 10px;}
   .stats{display:flex; gap:36px; margin-top:24px; flex-wrap:wrap;}
-  .stat b{font-family:'Wix Madefor Display'; font-size:28px; color:var(--blue); display:block;}
+  .stat b{font-family:'Wix Madefor Display'; font-size:28px; background: linear-gradient(90deg, #6BF684 0%, #F66BDD 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display:block;}
   .stat span{font-size:13px; color:var(--ink-soft);}
 
   /* ABOUT */
@@ -331,9 +337,9 @@
                   <div class="case-num">Case study 1</div>
                   <div class="case-title">Create NAV proposals</div>
                   <div class="steps">
-                    <div class="step"><div class="field-label">Problem</div><p class="field-value">Updating the Net Asset Value was a complex process, overwhelming the user with too much information[...]</p></div>
+                    <div class="step"><div class="field-label">Problem</div><p class="field-value">Updating the Net Asset Value was a complex process, overwhelming the user with too much informat[...]</p></div>
                     <div class="step"><div class="field-label">Process</div><p class="field-value">Task analysis, heuristic evaluation, competitor and user research informed the new solution.</p></div>
-                    <div class="step"><div class="field-label">Solution</div><p class="field-value">Progressive disclosure and a step process created a stronger information hierarchy, giving users clarity[...]</p></div>
+                    <div class="step"><div class="field-label">Solution</div><p class="field-value">Progressive disclosure and a step process created a stronger information hierarchy, giving user[...]</p></div>
                     <div class="step"><div class="field-label">KPIs tracked</div><div class="kpis"><span class="kpi-pill">Error rate</span><span class="kpi-pill">Task success rate</span></div></div>
                   </div>
                 </div>
@@ -344,7 +350,7 @@
                   <div class="steps">
                     <div class="step"><div class="field-label">Problem</div><p class="field-value">The external governance interface limited efficiency, leading to low participation[...]</p></div>
                     <div class="step"><div class="field-label">Process</div><p class="field-value">Task analysis and competitor research defined the requirements and flows of the new solution.</p></div>
-                    <div class="step"><div class="field-label">Solution</div><p class="field-value">A purpose-driven governance interface helped users identify priorities, track activity and submit votes[...]</p></div>
+                    <div class="step"><div class="field-label">Solution</div><p class="field-value">A purpose-driven governance interface helped users identify priorities, track activity and subm[...]</p></div>
                     <div class="step"><div class="field-label">KPIs tracked</div><div class="kpis"><span class="kpi-pill">Error rate</span><span class="kpi-pill">Task success rate</span></div></div>
                   </div>
                 </div>
