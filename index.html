@@ -100,6 +100,8 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    display: inline-block;
+    min-width: 120px;
   }
 
   section{padding:76px 0; border-top:1px solid var(--line);}
@@ -235,7 +237,7 @@
   <section class="hero" style="border-top:none;">
     <div class="wrap">
       <div class="kicker">UI/UX &amp; Product Designer</div>
-      <h1>Crafting seamless, <span class="gradient-text">functional</span> digital products</h1>
+      <h1>Crafting seamless, <span class="gradient-text" id="rotating-word">functional</span> digital products</h1>
       <p class="sub">With focus on usability and scalability, I contribute to end‑to‑end products development, ensuring a user-centered and data-driven approach</p>
       <div class="row">
        
@@ -537,6 +539,20 @@
   </footer>
 
 </main>
+
+<script>
+  const words = ['functional', 'usable', 'scalable', 'modular'];
+  let currentIndex = 0;
+  const rotatingWordElement = document.getElementById('rotating-word');
+
+  function rotateWord() {
+    currentIndex = (currentIndex + 1) % words.length;
+    rotatingWordElement.textContent = words[currentIndex];
+  }
+
+  // Change word every 3 seconds
+  setInterval(rotateWord, 3000);
+</script>
 
 </body>
 </html>
