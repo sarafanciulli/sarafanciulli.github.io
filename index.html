@@ -95,6 +95,13 @@
   }
   .hero .row{margin-top:40px; display:flex; gap:14px; flex-wrap:wrap;}
 
+  .gradient-text {
+    background: linear-gradient(90deg, #6BF684 0%, #F66BDD 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   section{padding:76px 0; border-top:1px solid var(--line);}
   .section-head{
     display:flex; justify-content:space-between; align-items:flex-end;
@@ -131,6 +138,10 @@
 
   .results-block{
     margin-top:0;
+  }
+
+  .project-image{
+    width:100%;
   }
 
   .cs-toggle{margin-top:26px;}
@@ -224,7 +235,7 @@
   <section class="hero" style="border-top:none;">
     <div class="wrap">
       <div class="kicker">UI/UX &amp; Product Designer</div>
-      <h1>Crafting seamless, functional digital products</h1>
+      <h1>Crafting seamless, <span class="gradient-text">functional</span> digital products</h1>
       <p class="sub">With focus on usability and scalability, I contribute to end‑to‑end products development, ensuring a user-centered and data-driven approach</p>
       <div class="row">
        
