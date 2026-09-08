@@ -133,22 +133,39 @@
     border-radius:20px;
     padding:36px;
     margin-bottom:22px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:48px;
+    align-items:start;
   }
+
+  @media (max-width:920px){
+    .project{
+      grid-template-columns: 1fr;
+      gap:32px;
+    }
+  }
+
+  .project-content{
+    display:flex;
+    flex-direction:column;
+  }
+
   .project-top{
-    display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; align-items:flex-start;
+    display:flex; flex-direction:column; gap:0;
   }
+  
   .project-tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;}
   .tag{
     font-size:12.5px; color:var(--ink-soft);
     border:1px solid var(--line); border-radius:20px; padding:4px 12px;
   }
-  .project h3{font-size:26px;}
-  .project .pitch{color:var(--ink-soft); margin-top:6px; max-width:48ch;}
-  .project .meta{text-align:right; font-size:14px; color:var(--ink-soft);}
-  .project .meta strong{display:block; color:var(--ink); font-family:'Wix Madefor Display'; font-size:15px;}
+  .project h3{font-size:26px; margin-bottom:6px;}
+  .project .pitch{color:var(--ink-soft); margin-top:0; max-width:48ch;}
+  .project .meta{text-align:left; font-size:14px; color:var(--ink-soft); margin-top:10px;}
+  .project .meta strong{display:inline; color:var(--ink); font-family:'Wix Madefor Display'; font-size:15px;}
 
   .project-body{margin-top:26px; display:flex; flex-direction:column; gap:28px;}
-  @media (max-width:720px){.project-body{flex-direction:column;}}
   .field-label{font-size:13px; color:var(--ink-soft); margin-bottom:4px;}
   .field-value{font-size:15.5px;}
 
@@ -158,6 +175,16 @@
 
   .project-image{
     width:100%;
+    border-radius:16px;
+    overflow:hidden;
+    border:1px solid var(--line);
+  }
+
+  .project-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
   }
 
   .cs-toggle{margin-top:26px;}
@@ -269,186 +296,200 @@
 
       <!-- Rethink.Finance -->
       <article class="project">
-        <div class="project-top">
-          <div>
+        <div class="project-content">
+          <div class="project-top">
             <h3>Rethink.Finance</h3>
             <p class="pitch">Non-custodial and community-driven fund management</p>
-            <div class="project-tags"><span class="tag">JTBD</span><span class="tag">16Months</span></div>
+            <div class="project-tags"><span class="tag">JTBD</span><span class="tag">16 months</span></div>
           </div>
-        </div>
-        
-        <div class="project-body">
-          <div>
-            <div class="field-label">Business vision</div>
-            <div class="field-value">Ensure investor communities can manage funds with a democratic decision making, non-custodial and chain-agnostic approach</div>
-          </div>
+          
+          <div class="project-body">
+            <div>
+              <div class="field-label">Business vision</div>
+              <div class="field-value">Ensure investor communities can manage funds with a democratic decision making, non-custodial and chain-agnostic approach</div>
+            </div>
 
-          <div>
-            <div class="field-label">Objective</div>
-            <div class="field-value">Reaching $100,000 AUM within 6 months, as proof of traction</div>
-          </div>
+            <div>
+              <div class="field-label">Objective</div>
+              <div class="field-value">Reaching $100,000 AUM within 6 months, as proof of traction</div>
+            </div>
 
-          <div class="results-block">
-            <div class="field-label">Results</div>
-            <div class="stats">
-              <div class="stat"><b>+300K</b><span>AUM ($)</span></div>
-              <div class="stat"><b>+100</b><span>Users</span></div>
-              <div class="stat"><b>+12</b><span>DAOs</span></div>
+            <div class="results-block">
+              <div class="field-label">Results</div>
+              <div class="stats">
+                <div class="stat"><b>+300K</b><span>AUM ($)</span></div>
+                <div class="stat"><b>+100</b><span>Users</span></div>
+                <div class="stat"><b>+12</b><span>DAOs</span></div>
+              </div>
+            </div>
+
+            <div class="cs-toggle">
+              <details>
+                <summary>Read more</summary>
+
+                <div class="case">
+                  <div class="case-num">Case study 1</div>
+                  <div class="case-title">Create NAV proposals</div>
+                  <div class="steps">
+                    <div class="step"><div class="field-label">Problem</div><p class="field-value">Updating the Net Asset Value was a complex process, overwhelming the user with too much information[...]</p></div>
+                    <div class="step"><div class="field-label">Process</div><p class="field-value">Task analysis, heuristic evaluation, competitor and user research informed the new solution.</p></div>
+                    <div class="step"><div class="field-label">Solution</div><p class="field-value">Progressive disclosure and a step process created a stronger information hierarchy, giving users clarity[...]</p></div>
+                    <div class="step"><div class="field-label">KPIs tracked</div><div class="kpis"><span class="kpi-pill">Error rate</span><span class="kpi-pill">Task success rate</span></div></div>
+                  </div>
+                </div>
+
+                <div class="case">
+                  <div class="case-num">Case study 2</div>
+                  <div class="case-title">Create proposals and submit vote</div>
+                  <div class="steps">
+                    <div class="step"><div class="field-label">Problem</div><p class="field-value">The external governance interface limited efficiency, leading to low participation[...]</p></div>
+                    <div class="step"><div class="field-label">Process</div><p class="field-value">Task analysis and competitor research defined the requirements and flows of the new solution.</p></div>
+                    <div class="step"><div class="field-label">Solution</div><p class="field-value">A purpose-driven governance interface helped users identify priorities, track activity and submit votes[...]</p></div>
+                    <div class="step"><div class="field-label">KPIs tracked</div><div class="kpis"><span class="kpi-pill">Error rate</span><span class="kpi-pill">Task success rate</span></div></div>
+                  </div>
+                </div>
+
+                <div class="case">
+                  <div class="field-label">What I learned</div>
+                  <p class="field-value">Raw code proposal interactions, DeFi governance requirements, governance token setup.</p>
+                </div>
+              </details>
             </div>
           </div>
+        </div>
 
-          <div class="project-image">
-            <img src="RF-cover-1.png" alt="Rethink Finance Preview">
-          </div>
-
-          <div class="cs-toggle">
-            <details>
-              <summary>Read more</summary>
-
-              <div class="case">
-                <div class="case-num">Case study 1</div>
-                <div class="case-title">Create NAV proposals</div>
-                <div class="steps">
-                  <div class="step"><div class="field-label">Problem</div><p class="field-value">Updating the Net Asset Value was a complex process, overwhelming the user with too much informatio[...]
-                  <div class="step"><div class="field-label">Process</div><p class="field-value">Task analysis, heuristic evaluation, competitor and user research informed the new solution.</p></[...]
-                  <div class="step"><div class="field-label">Solution</div><p class="field-value">Progressive disclosure and a step process created a stronger information hierarchy, giving users [...]
-                  <div class="step"><div class="field-label">KPIs tracked</div><div class="kpis"><span class="kpi-pill">Error rate</span><span class="kpi-pill">Task success rate</span><span class[...]
-                </div>
-              </div>
-
-              <div class="case">
-                <div class="case-num">Case study 2</div>
-                <div class="case-title">Create proposals and submit vote</div>
-                <div class="steps">
-                  <div class="step"><div class="field-label">Problem</div><p class="field-value">The external governance interface limited efficiency, leading to low participation and fund activi[...]
-                  <div class="step"><div class="field-label">Process</div><p class="field-value">Task analysis and competitor research defined the requirements and flows of the new solution.</p><[...]
-                  <div class="step"><div class="field-label">Solution</div><p class="field-value">A purpose-driven governance interface helped users identify priorities, track activity and submit[...]
-                  <div class="step"><div class="field-label">KPIs tracked</div><div class="kpis"><span class="kpi-pill">Error rate</span><span class="kpi-pill">Task success rate</span><span class[...]
-                </div>
-              </div>
-
-              <div class="case">
-                <div class="field-label">What I learned</div>
-                <p class="field-value">Raw code proposal interactions, DeFi governance requirements, governance token setup.</p>
-              </div>
-            </details>
-          </div>
+        <div class="project-image">
+          <img src="RF-cover-1.png" alt="Rethink Finance Preview">
         </div>
       </article>
 
       <!-- Foundance -->
       <article class="project">
-        <div class="project-top">
-          <div>
+        <div class="project-content">
+          <div class="project-top">
             <h3>Foundance</h3>
             <p class="pitch">A bootstrapping tool based on an optimistic smart contract that automates DAO reward allocations.</p>
             <div class="project-tags"><span class="tag">UI/UX</span><span class="tag">Lean-Agile</span><span class="tag">DAOs</span></div>
+            <div class="meta"><strong>21 months</strong> · Solo designer</div>
           </div>
-          <div class="meta"><strong>21 months</strong>Solo designer</div>
-        </div>
-        <div class="project-body">
-          <div>
-            <div class="field-label">Business vision</div>
-            <div class="field-value">Increase DAO contribution through an optimistic smart contract that automates reward allocations.</div>
-          </div>
-          <div>
-            <div class="field-label">Objective</div>
-            <div class="field-value">Activate 50 agreements in the first 6 months, as proof of traction.</div>
-          </div>
-
-          <div class="results-block">
-            <div class="stats">
-              <div class="stat"><b>+80</b><span>Projects</span></div>
-              <div class="stat"><b>+1000</b><span>Users</span></div>
-              <div class="stat"><b>+120</b><span>Contracts</span></div>
+          
+          <div class="project-body">
+            <div>
+              <div class="field-label">Business vision</div>
+              <div class="field-value">Increase DAO contribution through an optimistic smart contract that automates reward allocations.</div>
             </div>
-          </div>
-        </div>
-        <div class="cs-toggle">
-          <details>
-            <summary>Read the full case study</summary>
+            <div>
+              <div class="field-label">Objective</div>
+              <div class="field-value">Activate 50 agreements in the first 6 months, as proof of traction.</div>
+            </div>
 
-            <div class="case">
-              <div class="case-num">Case study 1</div>
-              <div class="case-title">Onboard team members</div>
-              <div class="steps">
-                <div class="step"><div class="field-label">Problem</div><p class="field-value">Role creation led to frustration: unclear requirements and uncertain metrics caused a frozen onboard[...]
-                <div class="step"><div class="field-label">Process</div><p class="field-value">Usability tests uncovered user needs and frustrations, informing a data-driven solution.</p></div>
-                <div class="step"><div class="field-label">Solution</div><p class="field-value">Pre-populated, customizable role templates cut processing time and improved profile pages to guide [...]
-                <div class="step"><div class="field-label">KPIs tracked</div><div class="kpis"><span class="kpi-pill">Error rate</span><span class="kpi-pill">Task success rate</span><span class="[...]
+            <div class="results-block">
+              <div class="field-label">Results</div>
+              <div class="stats">
+                <div class="stat"><b>+80</b><span>Projects</span></div>
+                <div class="stat"><b>+1000</b><span>Users</span></div>
+                <div class="stat"><b>+120</b><span>Contracts</span></div>
               </div>
             </div>
 
-            <div class="case">
-              <div class="case-num">Case study 2</div>
-              <div class="case-title">Enact an on-chain agreement</div>
-              <div class="steps">
-                <div class="step"><div class="field-label">Problem</div><p class="field-value">Creating a smart contract required evaluating numerous technical parameters — uncertainty and fear[...]
-                <div class="step"><div class="field-label">Process</div><p class="field-value">Usability tests surfaced pain points that shaped the new solution.</p></div>
-                <div class="step"><div class="field-label">Solution</div><p class="field-value">Three pre-configured agreement templates, ordered by complexity, let users pick what fit their need[...]
-                <div class="step"><div class="field-label">KPIs tracked</div><div class="kpis"><span class="kpi-pill">Error rate</span><span class="kpi-pill">Task success rate</span><span class="[...]
-              </div>
-            </div>
+            <div class="cs-toggle">
+              <details>
+                <summary>Read the full case study</summary>
 
-            <div class="case">
-              <div class="field-label">What I learned</div>
-              <p class="field-value">Matching mechanisms, pre-compiled guidance, DAO HR process, on-chain contributor onboarding, agreement upgrades and governance approval.</p>
+                <div class="case">
+                  <div class="case-num">Case study 1</div>
+                  <div class="case-title">Onboard team members</div>
+                  <div class="steps">
+                    <div class="step"><div class="field-label">Problem</div><p class="field-value">Role creation led to frustration: unclear requirements and uncertain metrics[...]</p></div>
+                    <div class="step"><div class="field-label">Process</div><p class="field-value">Usability tests uncovered user needs and frustrations, informing a data-driven solution.</p></div>
+                    <div class="step"><div class="field-label">Solution</div><p class="field-value">Pre-populated, customizable role templates cut processing time[...]</p></div>
+                    <div class="step"><div class="field-label">KPIs tracked</div><div class="kpis"><span class="kpi-pill">Error rate</span><span class="kpi-pill">Task success rate</span></div></div>
+                  </div>
+                </div>
+
+                <div class="case">
+                  <div class="case-num">Case study 2</div>
+                  <div class="case-title">Enact an on-chain agreement</div>
+                  <div class="steps">
+                    <div class="step"><div class="field-label">Problem</div><p class="field-value">Creating a smart contract required evaluating numerous technical parameters[...]</p></div>
+                    <div class="step"><div class="field-label">Process</div><p class="field-value">Usability tests surfaced pain points that shaped the new solution.</p></div>
+                    <div class="step"><div class="field-label">Solution</div><p class="field-value">Three pre-configured agreement templates, ordered by complexity[...]</p></div>
+                    <div class="step"><div class="field-label">KPIs tracked</div><div class="kpis"><span class="kpi-pill">Error rate</span><span class="kpi-pill">Task success rate</span></div></div>
+                  </div>
+                </div>
+
+                <div class="case">
+                  <div class="field-label">What I learned</div>
+                  <p class="field-value">Matching mechanisms, pre-compiled guidance, DAO HR process, on-chain contributor onboarding, agreement upgrades and governance approval.</p>
+                </div>
+              </details>
             </div>
-          </details>
+          </div>
+        </div>
+
+        <div class="project-image">
+          <img src="foundance-cover.jpg" alt="Foundance Preview">
         </div>
       </article>
 
       <!-- mQuark -->
       <article class="project">
-        <div class="project-top">
-          <div>
+        <div class="project-content">
+          <div class="project-top">
             <h3>mQuark</h3>
             <p class="pitch">A developer tool for managing interoperable NFTs at scale.</p>
             <div class="project-tags"><span class="tag">Product Design</span><span class="tag">Task Analysis</span><span class="tag">NFTs</span></div>
-          </div>
-          <div class="meta"><strong>7 months</strong>Solo designer</div>
-        </div>
-        <div class="project-body">
-          <div>
-            <div class="field-label">Business vision</div>
-            <div class="field-value">A tool for interoperable NFT management at scale.</div>
-          </div>
-          <div>
-            <div class="field-label">Objective</div>
-            <div class="field-value">Reach first seed funding.</div>
+            <div class="meta"><strong>7 months</strong> · Solo designer</div>
           </div>
 
-          <div class="results-block">
-            <div class="stats">
-              <div class="stat"><b>+5</b><span>Interested investors</span></div>
+          <div class="project-body">
+            <div>
+              <div class="field-label">Business vision</div>
+              <div class="field-value">A tool for interoperable NFT management at scale.</div>
             </div>
-          </div>
-        </div>
-        <div class="cs-toggle">
-          <details>
-            <summary>Read the full case study</summary>
+            <div>
+              <div class="field-label">Objective</div>
+              <div class="field-value">Reach first seed funding.</div>
+            </div>
 
-            <div class="case">
-              <div class="case-num">Case study</div>
-              <div class="case-title">Create a NFT collection</div>
-              <div class="steps">
-                <div class="step"><div class="field-label">Problem</div><p class="field-value">Internal usability tests and brainstorms showed users struggled to understand the requirements and g[...]
-                <div class="step"><div class="field-label">Process</div><p class="field-value">Internal interviews and usability tests with engineers and stakeholders uncovered frustrations and m[...]
-                <div class="step"><div class="field-label">Solution</div><p class="field-value">A step-based, progressive-disclosure experience produced a clearer information hierarchy and user p[...]
-                <div class="step"><div class="field-label">KPIs tracked</div><div class="kpis"><span class="kpi-pill">Error rate</span><span class="kpi-pill">Task success rate</span><span class="[...]
+            <div class="results-block">
+              <div class="field-label">Results</div>
+              <div class="stats">
+                <div class="stat"><b>+5</b><span>Interested investors</span></div>
               </div>
             </div>
 
-            <div class="case">
-              <div class="field-label">What I learned</div>
-              <p class="field-value">B2C flows, interoperable NFTs, attribute hierarchy, NFT marketplace, NFT analytics, collection cloning.</p>
-            </div>
+            <div class="cs-toggle">
+              <details>
+                <summary>Read the full case study</summary>
 
-            <div class="case">
-              <div class="field-label">Where it stands</div>
-              <p class="field-value">The model was presented to potential investors and partners, including major fashion and sport brands, and sparked real interest — though the project didn't[...]
+                <div class="case">
+                  <div class="case-num">Case study</div>
+                  <div class="case-title">Create a NFT collection</div>
+                  <div class="steps">
+                    <div class="step"><div class="field-label">Problem</div><p class="field-value">Internal usability tests and brainstorms showed users struggled[...]</p></div>
+                    <div class="step"><div class="field-label">Process</div><p class="field-value">Internal interviews and usability tests with engineers and stakeholders uncovered frustrations[...]</p></div>
+                    <div class="step"><div class="field-label">Solution</div><p class="field-value">A step-based, progressive-disclosure experience produced a clearer information hierarchy[...]</p></div>
+                    <div class="step"><div class="field-label">KPIs tracked</div><div class="kpis"><span class="kpi-pill">Error rate</span><span class="kpi-pill">Task success rate</span></div></div>
+                  </div>
+                </div>
+
+                <div class="case">
+                  <div class="field-label">What I learned</div>
+                  <p class="field-value">B2C flows, interoperable NFTs, attribute hierarchy, NFT marketplace, NFT analytics, collection cloning.</p>
+                </div>
+
+                <div class="case">
+                  <div class="field-label">Where it stands</div>
+                  <p class="field-value">The model was presented to potential investors and partners, including major fashion and sport brands, and sparked real interest[...]</p>
+                </div>
+              </details>
             </div>
-          </details>
+          </div>
+        </div>
+
+        <div class="project-image">
+          <img src="mquark-cover.jpg" alt="mQuark Preview">
         </div>
       </article>
 
@@ -469,7 +510,7 @@
 
           <div class="skillbox">
             <h4>Skills</h4>
-            <p>Branding · Design systems · Information architecture · Interaction design · Prototyping · Responsive design · Usability testing · User flow · User research · User journey [...]
+            <p>Branding · Design systems · Information architecture · Interaction design · Prototyping · Responsive design · Usability testing · User flow · User research · User journey mapping</p>
             <h4>Tools</h4>
             <p>Figma · Adobe · Protopie · Miro · Notion · Dovetail · Atlassian · Canva · Jitter · WordPress · AI tools (ChatGPT, Midjourney, Leonardo AI)</p>
           </div>
