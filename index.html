@@ -21,9 +21,6 @@
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-  <img id="lightbox-img" src="" alt="Immagine ingrandita">
-</div>
   body{
     margin:0;
     background:var(--bg);
@@ -668,5 +665,23 @@
   setInterval(rotateWord, 1600);
 </script>
 
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="Immagine ingrandita">
+</div>
+
+<script>
+  function closeLightbox(){
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.querySelectorAll('.project-image img, .project-gallery img').forEach(function(img){
+    img.addEventListener('click', function(){
+      document.getElementById('lightbox-img').src = this.src;
+      document.getElementById('lightbox').classList.add('open');
+    });
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeLightbox();
+  });
+</script>
 </body>
 </html>
